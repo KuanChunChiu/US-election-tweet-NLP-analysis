@@ -64,7 +64,7 @@ Naive Bayes Result:
 ### Running the models
 
 
-## How to Interpret the Results:
+## How to Interpret the Results
 
 
 ## Analysis You Can Do Using This Program
