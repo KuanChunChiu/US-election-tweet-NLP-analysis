@@ -7,33 +7,41 @@ Logistic Regression Result:
 - 2020 Classification
 
 ![2020_logistic_regression](https://github.com/user-attachments/assets/c51c8ea2-5de7-4775-b458-159b024d5e78)
+![2020_logistic_report](https://github.com/user-attachments/assets/dc18d8a4-e20c-4a0f-97cb-5f37a712731b)
 - 2024 Classification
 
 ![2024_logistic_regression](https://github.com/user-attachments/assets/48ef1bb0-b0d5-4199-b07f-86182c94cd24)
+![2024_logistic_report](https://github.com/user-attachments/assets/f53fae2b-1ad1-4157-96da-4e505ee30459)
 
 DistilBERT Result:
 - 2020 Classification
 
 ![2020_DistilBERT](https://github.com/user-attachments/assets/8cd6ce02-38e7-43c3-a65a-5daa668f0628)
+![2020_DistilBERT_report](https://github.com/user-attachments/assets/bfe60c15-cc89-4c49-bdcf-8c56658775d2)
 - 2024 Classification
 
 ![2024_DistilBERT](https://github.com/user-attachments/assets/ba87379e-1496-4ded-a480-168d432f8ef1)
+![2024_DistilBERT_report](https://github.com/user-attachments/assets/8fead2d7-ac6d-44ec-9556-d6b96300a317)
 
-SVM Result:
+SVM Result (with hyperparameter fine-tuning):
 - 2020 Classification
 
-![2020_SVM](https://github.com/user-attachments/assets/83b24a4f-05e0-47f0-b57f-f3ebc4dcf4f2)
+![2020_SVM_fine_tuned](https://github.com/user-attachments/assets/4cd5dc8b-ac67-4988-bc63-1d065ccdf2c3)
+![2020_SVM_fine_tuned_report](https://github.com/user-attachments/assets/20235eec-55f1-4354-bebd-c4d7c74e818d)
 - 2024 Classification
 
-![2024_SVM](https://github.com/user-attachments/assets/0826d13b-692e-47ca-b8cb-6eeb5725283b)
+![2024_SVM_fine_tuned](https://github.com/user-attachments/assets/d68bce0d-1b49-46e1-9b8d-f98608ebf261)
+![2020_SVM_fine_tuned_report](https://github.com/user-attachments/assets/60a9b1d4-da31-4e58-88cb-b52212cef31c)
 
 Naive Bayes Result:
 - 2020 Classification
 
 ![2020_Naive_Bayes](https://github.com/user-attachments/assets/b54a92da-de2e-42f0-9ae2-b7365f1bf1ca)
+![2020_Naive_Bayes_Report](https://github.com/user-attachments/assets/b13242d3-c989-44f6-bd20-0e597d3ba657)
 - 2024 Classification
 
 ![2024_Naive_Bayes](https://github.com/user-attachments/assets/004ba97c-dbc2-4742-97a8-7ae25b4f4acd)
+![2024_Naive_Bayes_report](https://github.com/user-attachments/assets/dd6d4600-b266-4c2a-85ff-3a7fa640ea6b)
 
 ## How to Install and Run the Program
 ### Dependencies:
@@ -73,12 +81,12 @@ Make sure the very first cell is already executed before running any of the mode
 
 ## How to Interpret the Results
 - Analyzing Confusion Matrix
-When looking at the confusion matrix, the horizontal axis is the predicted label while the vertical axis is the actual label. Next, the order of parties is (Democrat, Republican) for both axes. Hence, the top left square indicates the number of test cases that's actually democrat and predicted to be democrat (true positive), while top right means the cases that are actually democrat but predicted to be republican (false negative). With the same logic, the bottom left means the cases that are actually republican but predicted as democrat (false positive), while the bottom right means the cases that are actually republican and predicted to be republican (true negative). For example, for the prediction result of 2020 election by logistic regression, it correctly classified 1099 democrat tweets and 1148 republican tweets, but falsely classfied 162 democrat tweets and 173 republican tweets, resulting in an overall accuracy of 87%.
 
+When looking at the confusion matrix, the horizontal axis is the predicted label while the vertical axis is the actual label. Next, the order of parties is (Democrat, Republican) for both axes. Hence, the top left square indicates the number of test cases that's actually democrat and predicted to be democrat (true positive), while top right means the cases that are actually democrat but predicted to be republican (false negative). With the same logic, the bottom left means the cases that are actually republican but predicted as democrat (false positive), while the bottom right means the cases that are actually republican and predicted to be republican (true negative). For example, for the prediction result of 2020 election by logistic regression, it correctly classified 1099 democrat tweets and 1148 republican tweets, but falsely classfied 162 democrat tweets and 173 republican tweets, resulting in an overall accuracy of 87%.
 
 - Analyzing Classification Report
 
-
+When looking at the classification report, the key metrics to focus on is precision, recall, f1-score, and accuracy. Precision means out of all the labels predicted to be correct/positive, how many of them are actually correct. Recall means how much of the total correct labels are identified and predicted as correct. F1-score means whether there's a good balance between the precision and recall score, in which a high precision and high recall results in a high F1-score, while a high + low combination of precision and recall results in a low F1-score. Lastly, accuracy means how many labels are correctly classified, which is the combination of true positive and true negative on the confusion matrix.
 
 ## Analysis You Can Do Using This Program
 - Which model shows the highest balance between its recall and precision? What does this infer about its classification performance?
