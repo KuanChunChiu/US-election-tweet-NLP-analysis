@@ -59,20 +59,33 @@ Naive Bayes Result:
 
 ## How to Use the Program
 ### Uploading data files:
-
+First of all, run the very first cell in Project.iypnb as it imports all neccessary libraries for this program. Then, run the second cell where a "Choose Files" button should pop up, and you can click on it to browse files from your device. When browsing, go into the Data folder downloaded earlier, then go to the "cleaned" subfolder where you'll find 2020_cleaned_tweets.csv and 2024_cleaned_tweets.csv. Upload these two files as they contain the tweets related to the 2020 and 2024 US presidential election. Since these files are uploaded to Google collab's VM, they only temporarily stay within the current collab session, so once you close the collab window or restart the kernel, these files will be gone and you have to upload them again.
 
 ### Running the models
+Make sure the very first cell is already executed before running any of the models, because they rely on many of the libraries imported at the beginning. 
+- Logistic regression: To run the logistic regression model, go to the header of "TF-IDF embedding + logistic regression approach", then run all the cells below it until the next header. This should correctly create the train/test set, vectorize the dataset with TF-IDF, load and train the model, and finally make the classification on both datasets. The last few cells will generate two classification report and confusion matrices, which shows the prediction performance in terms of precision, recall, F1-score, and accuracy.
 
+- DistilBERT: To run the DistilBERT model, go to the header of "DistilBERT approach", then run all the cells below it until the next header. This should correctly create the train/validate/test set, vectorize the dataset with DistilBERT's own embedding layer, load and train the model, and finally make the classification on both datasets. Similarly, the last few cells will generate two classification report and confusion matrices, which shows the prediction performance.
+
+- SVM: To run the SVM model, go to the header of "SVM", then run all the cells below it until the next header. This should correctly load and train the model, and make the classification on both datasets. There's no independent embedding process as SVM uses TF-IDF as its vectorizer, so it simply uses the vectorized train/test set created earlier in the logistic regression approach. As for a note, the training and testing process happens twice for SVM as the first one is the raw model while the second one has hyperparameter fine-tuning, which can be compared to see how much improvement can be done after fine-tuning the model. Similarly, the last few cells will generate two classification report and confusion matrices, which shows the prediction performance.
+
+- Naive Bayes: To run the Naive Bayes model, go to the header of "Naive Bayes Classifier", then run all the cells below it until the next header. This should correctly load and train the model, and make the classification on both datasets. There's no independent embedding process as Naive Bayes also uses TF-IDF as its vectorizer, so it simply uses the vectorized train/test set created earlier in the logistic regression approach. Similarly, the last few cells will generate two classification report and confusion matrices, which shows the prediction performance.
 
 ## How to Interpret the Results
+- Analyzing Confusion Matrix
+
+
+
+- Analyzing Classification Report
+
 
 
 ## Analysis You Can Do Using This Program
-- 
-- 
-- 
-- 
-- 
+- Which model shows the highest balance between its recall and precision? What does this infer about its classification performance?
+- Which model shows the highest accuracy? Given the distribution of tweets supporting Democrat and Republican, how significant is accuracy when measuring model performance?
+- Assuming the model classification results are correct, how has the political party leaning changed between the 2020 and 2024 US presidential election?
+- Does the use of embedding method with semantic understanding improves the classification performance? By how much?
+- Which model is the best option for social media texts classification?
 
 ## Contributors
 1. Kuan-Chun Chiu (Myself) - beagledirk1@gmail.com
