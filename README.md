@@ -73,7 +73,7 @@ Make sure the very first cell is already executed before running any of the mode
 
 ## How to Interpret the Results
 - Analyzing Confusion Matrix
-
+When looking at the confusion matrix, the horizontal axis is the predicted label while the vertical axis is the actual label. Next, the order of parties is (Democrat, Republican) for both axes. Hence, the top left square indicates the number of test cases that's actually democrat and predicted to be democrat (true positive), while top right means the cases that are actually democrat but predicted to be republican (false negative). With the same logic, the bottom left means the cases that are actually republican but predicted as democrat (false positive), while the bottom right means the cases that are actually republican and predicted to be republican (true negative). For example, for the prediction result of 2020 election by logistic regression, it correctly classified 1099 democrat tweets and 1148 republican tweets, but falsely classfied 162 democrat tweets and 173 republican tweets, resulting in an overall accuracy of 87%.
 
 
 - Analyzing Classification Report
